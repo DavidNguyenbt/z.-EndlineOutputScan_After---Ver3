@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="1024dp"
+	android:layout_height="512dp"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	tools:showIn="@layout/activity_main"
+	android:id="@+id/relativeLayout1"
+	android:focusableInTouchMode="true"
+	android:minWidth="25px"
+	android:minHeight="25px">
+	<TextView
+		android:text="ĐĂNG NHẬP"
+		android:layout_width="160.0dp"
+		android:layout_height="35.0dp"
+		android:textSize="25dp"
+		android:id="@+id/lbTitle"
+		android:layout_marginLeft="100.0dp"
+		android:layout_marginTop="13.0dp"
+		android:gravity="center"
+		android:textColor="@android:color/holo_green_light" />
+	<TextView
+		android:text="Xưởng"
+		android:textSize="15dp"
+		android:layout_width="70.0dp"
+		android:layout_height="18.0dp"
+		android:layout_below="@id/lbTitle"
+		android:id="@+id/lbFac"
+		android:layout_marginLeft="32.5dp"
+		android:layout_marginTop="26.0dp" />
+	<Spinner
+		android:layout_width="100.0dp"
+		android:layout_height="30dp"
+		android:layout_below="@id/lbTitle"
+		android:layout_toRightOf="@id/lbFac"
+		android:id="@+id/spFacSelect"
+		android:layout_marginLeft="9.0dp"
+		android:layout_marginTop="20.0dp"/>
+	<Spinner
+		android:layout_width="110dp"
+		android:layout_height="30dp"
+		android:layout_below="@id/lbTitle"
+		android:layout_toRightOf="@id/spFacSelect"
+		android:id="@+id/spLanguage"
+		android:layout_marginLeft="10dp"
+		android:layout_marginTop="20.0dp"/>
+	<TextView
+		android:text="Chuyền"
+		android:textSize="15dp"
+		android:layout_width="70.0dp"
+		android:layout_height="18.0dp"
+		android:layout_below="@id/lbFac"
+		android:id="@+id/lbLine"
+		android:layout_marginLeft="32.5dp"
+		android:layout_marginTop="30dp" />
+	<Spinner
+		android:layout_width="219.0dp"
+		android:layout_height="30dp"
+		android:layout_toRightOf="@id/lbLine"
+		android:layout_below="@id/spFacSelect"
+		android:id="@+id/spLineSelect"
+		android:layout_marginLeft="9.0dp"
+		android:layout_marginTop="15.0dp"/>
+	<Button
+		android:text="Chọn chuyền QRCODE"
+		android:layout_width="224.5dp"
+		android:layout_height="45dp"
+		android:layout_below="@id/lbLine"
+		android:id="@+id/btSelectLineQR"
+		android:textSize="15dp"
+		android:layout_marginTop="20dp"
+		android:layout_marginLeft="109.0dp" />
+	<TextView
+		android:text="Tên ID"
+		android:textSize="15dp"
+		android:layout_width="45.0dp"
+		android:layout_height="18.0dp"
+		android:id="@+id/lbUserID"
+		android:layout_below="@id/btSelectLineQR"
+		android:layout_marginLeft="33.5dp"
+		android:layout_marginTop="15.0dp" />
+	<EditText
+		android:hint="username"
+		android:textSize="15dp"
+		android:layout_width="228.5dp"
+		android:layout_height="45.0dp"
+		android:background="@null"
+		android:layout_toRightOf="@id/lbUserID"
+		android:layout_below="@id/btSelectLineQR"
+		android:id="@+id/tbUserID"
+		android:layout_marginLeft="30.5dp"
+		android:layout_marginTop="2.0dp"
+		android:layout_marginBottom="0.0dp" />
+	<TextView
+		android:text="Mật Khẩu"
+		android:textSize="15dp"
+		android:layout_width="70.0dp"
+		android:layout_height="18.0dp"
+		android:layout_below="@id/lbUserID"
+		android:id="@+id/lbPassword"
+		android:layout_marginLeft="32.5dp"
+		android:layout_marginTop="36.5dp" />
+	<EditText
+		android:hint="password"
+		android:textSize="15dp"
+		android:layout_width="225.5dp"
+		android:layout_height="45.0dp"
+		android:background="@null"
+		android:layout_toRightOf="@id/lbUserID"
+		android:layout_below="@id/tbUserID"
+		android:id="@+id/tbPassword"
+		android:layout_marginTop="7dp"
+		android:layout_marginLeft="30.5dp"
+		android:inputType="none|textPassword" />
+	<Button
+		android:text="Thoát"
+		android:layout_width="95.0dp"
+		android:layout_height="45dp"
+		android:layout_below="@id/tbPassword"
+		android:id="@+id/btExit"
+		android:textSize="15dp"
+		android:layout_marginLeft="107.0dp"
+		android:layout_marginTop="20.0dp" />
+	<Button
+		android:text="Đăng Nhập"
+		android:layout_width="122.0dp"
+		android:layout_height="45dp"
+		android:layout_toRightOf="@id/btExit"
+		android:layout_below="@id/tbPassword"
+		android:id="@+id/btLogIn"
+		android:textSize="15dp"
+		android:layout_marginTop="20.0dp"
+		android:layout_marginLeft="10.0dp" />
+	<Button
+		android:text="ĐĂNG NHẬP bằng QR CODE"
+		android:layout_width="224.5dp"
+		android:layout_height="45dp"
+		android:textAllCaps="false"
+		android:layout_below="@id/btExit"
+		android:id="@+id/btLogInQR"
+		android:textSize="15dp"
+		android:layout_marginLeft="109.0dp" />
+	<TextView
+		android:text="Server Configuration"
+		android:layout_width="150.0dp"
+		android:layout_height="18dp"
+		android:layout_below="@id/btLogInQR"
+		android:id="@+id/tvServer"
+		android:textSize="13dp"
+		android:gravity="center"
+		android:layout_marginTop="15.0dp"
+		android:layout_marginLeft="141.5dp" />
+<TextView
+		android:text="SET UP WORKING TIME"
+		android:layout_width="150.0dp"
+		android:layout_height="18dp"
+		android:textColor="#0000FF"
+		android:layout_below="@id/tvServer"
+		android:id="@+id/tvworkingtime"
+		android:textStyle="bold"
+		android:textSize="13dp"
+		android:gravity="center"
+		android:layout_marginTop="15.0dp"
+		android:layout_marginLeft="141.5dp" />
+</RelativeLayout>
