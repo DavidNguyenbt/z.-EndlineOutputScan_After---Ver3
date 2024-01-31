@@ -263,7 +263,8 @@ namespace EndlineOutputScan
 
                     server.Text = CSDL.Language("M00007");
 
-                    UpdateChecker();
+                    //UpdateChecker();
+                    UpdateVersion();
                 };
 
                 login.Click += delegate
@@ -271,7 +272,8 @@ namespace EndlineOutputScan
                     if (forceUpdate && newVer)
                     {
                         Toast.MakeText(this, "Update require !!", ToastLength.Long).Show();
-                        UpdateChecker();
+                        //UpdateChecker();
+                        UpdateVersion();
                     }
                     else
                     {
@@ -426,8 +428,8 @@ namespace EndlineOutputScan
                 };
                 server.LongClick += delegate
                 {
-                    //UpdateVersion();
-                    UpdateChecker();
+                    UpdateVersion();
+                    //UpdateChecker();
                 };
                 user.LongClick += delegate
                 {

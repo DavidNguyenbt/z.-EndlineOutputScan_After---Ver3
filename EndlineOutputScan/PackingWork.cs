@@ -220,7 +220,7 @@ namespace EndlineOutputScan
                       {
                           Java.IO.File sdCard = Android.OS.Environment.ExternalStorageDirectory;
 
-                          var filesList = Directory.GetFiles(System.IO.Path.Combine(sdCard.AbsolutePath, PackageName)).Reverse().ToArray();
+                          var filesList = Directory.GetFiles(System.IO.Path.Combine(GetExternalFilesDir(null).AbsolutePath, PackageName)).OrderByDescending(f => File.GetCreationTime(f)).ToArray();//Directory.GetFiles(System.IO.Path.Combine(sdCard.AbsolutePath, PackageName)).Reverse().ToArray();
 
                           Android.App.AlertDialog.Builder b = new AlertDialog.Builder(this);
                           Android.App.AlertDialog.Builder bb = new AlertDialog.Builder(this);
@@ -892,19 +892,14 @@ namespace EndlineOutputScan
         {
             try
             {
-                Java.IO.File sdCard = Android.OS.Environment.ExternalStorageDirectory;
-                Java.IO.File dir = new Java.IO.File(System.IO.Path.Combine(sdCard.AbsolutePath, PackageName));
+                //Java.IO.File sdCard = Android.OS.Environment.ExternalStorageDirectory;
+                //Java.IO.File dir = new Java.IO.File(sdCard, PackageName);
+                Java.IO.File dir = new Java.IO.File(this.GetExternalFilesDir(null), PackageName);
                 if (!dir.Exists()) dir.Mkdirs();
 
                 Java.IO.File file = new Java.IO.File(dir, CSDL.SelectedLine + " " + DateTime.Now.ToString("dd-MM-yy") + ".txt");
 
-                if (!file.Exists())
-                {
-                    if (!file.ParentFile.Exists()) file.ParentFile.Mkdirs();
-
-                    file.CreateNewFile();
-                    file.Mkdir();
-                }
+                if (!file.Exists()) file.CreateNewFile();
 
                 Java.IO.FileWriter writer = new Java.IO.FileWriter(file);
                 // Writes the content to the file
@@ -920,19 +915,14 @@ namespace EndlineOutputScan
         {
             try
             {
-                Java.IO.File sdCard = Android.OS.Environment.ExternalStorageDirectory;
-                Java.IO.File dir = new Java.IO.File(System.IO.Path.Combine(sdCard.AbsolutePath, PackageName));
+                //    Java.IO.File sdCard = Android.OS.Environment.ExternalStorageDirectory;
+                //    Java.IO.File dir = new Java.IO.File(System.IO.Path.Combine(sdCard.AbsolutePath, PackageName));
+                Java.IO.File dir = new Java.IO.File(this.GetExternalFilesDir(null), PackageName);
                 if (!dir.Exists()) dir.Mkdirs();
 
                 Java.IO.File file = new Java.IO.File(dir, CSDL.SelectedLine + " " + DateTime.Now.ToString("dd-MM-yy") + "-Backup.txt");
 
-                if (!file.Exists())
-                {
-                    if (!file.ParentFile.Exists()) file.ParentFile.Mkdirs();
-
-                    file.CreateNewFile();
-                    file.Mkdir();
-                }
+                if (!file.Exists()) file.CreateNewFile();
 
                 Java.IO.FileWriter writer = new Java.IO.FileWriter(file);
                 // Writes the content to the file

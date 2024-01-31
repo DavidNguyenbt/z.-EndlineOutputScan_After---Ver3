@@ -27,7 +27,7 @@ namespace EndlineOutputScan
         public static string mk = "", error = "", lvMessage = "";
         public static string username = "";
         public static string SelectedLine = "", UPCString = "", SelectedUPCPO = "", SelectedGmtType = "", SelectedColor = "", SelectedShipNo = "",
-                            strTimeTitle = "", version = "V4.6", OpenTime = DateTime.Now.ToString("yyMMdd HH:mm");
+                            strTimeTitle = "", version = "V4.7", OpenTime = DateTime.Now.ToString("yyMMdd HH:mm");
         public static DateTime currDatetime;
         public static int i = 0, SelectedUPCPOQty = 0, updateTime = 10;
         public static DataTable dtUPCDetail = new DataTable();
